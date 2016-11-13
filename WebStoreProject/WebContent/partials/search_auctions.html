@@ -1,0 +1,55 @@
+
+<div data-ng-init="list_categories()"></div>
+<div class="section">
+<div class="container">
+<div class="row">
+
+
+
+        <div class="col-sm-12">
+            <h3>What would you like to search for?</h3>
+			<form class="form-horizontal" role="form" id="form" data-ng-submit="search()">
+                <div class="row">
+                    <div class="form-group col-sm-6">
+                        <label for="input1">Enter your search</label>
+					      <input type="text" data-ng-model="name" class="form-control" id="name" placeholder="What would you like to search for / Optional">
+                    </div>
+                    <div class="form-group col-sm-6">
+                         <label for="input2">Select Category</label>
+   						 <select ng-model="categ" id="categ" class="form-control">
+							 <option value="" disabled selected>Select category / Optional</option>
+							  <option data-ng-repeat="cat in categlist" value="{{cat.name}}">{{cat.name}}</option>
+						</select> 
+					</div>
+                    <div class="form-group col-sm-6">
+                        <label for="input3">Select Lowest Price</label>
+					      <input type="number" data-ng-model="from" class="form-control" id="from" step="0.5" placeholder="Optional">
+                    </div>
+                    <div class="form-group col-sm-6">
+                        <label for="input4">Select Higher Price</label>
+					   
+					      <input type="number" data-ng-model="to" class="form-control" id="to" step="0.5" placeholder="Optional">
+                    </div>
+                    <div class="form-group col-sm-12">
+                        <button type="submit" onclick="search()" class="btn btn-primary">Search
+                        <span data-ng-show="searchstate == 'Searching'"><i class="glyphicon glyphicon-refresh spinning"></i></span>
+                        </button>
+                        
+                    </div>
+                    <div class="form-group col-sm-12">
+  							<p><center>{{errormsg2}}</center>                      
+                    </div>
+                </div>
+            </form>
+        </div>
+        </div>
+        <!-- /.row -->
+        </div>
+        <!-- /.container -->
+        </div>   
+        <!-- /.section -->
+        
+       
+
+
+

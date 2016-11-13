@@ -1,0 +1,38 @@
+<div class="section">
+<div class="container">
+<div class="row">
+        <div class="col-sm-8">
+            <h3>Leave Feedback for the seller: <span ng-bind="rate_uname"></span></h3>
+   
+		    <div class="table-responsive">     
+		  <table class="table table-hover table-condensed">		  
+		     <tr>
+		        <th>Item Title</th>
+		        <td><span ng-bind="item"></span></td>
+		      </tr>
+		      <tr>
+		        <th>Item Bought From</th>
+		        <td><span ng-bind="rate_uname"></span></td>
+		      </tr>
+		      <tr>
+		        <th data-ng-show="globals.currentUser">Enter your rating </th>
+		        <td> <input type="number" data-ng-show="globals.currentUser" name="rating" data-ng-model="rating" step="0.1" min="1" max="5" placeholder="(1-Awful, 5-Excellent)">
+		        </td>
+			  </tr>
+			  <tr>
+		        <th></th>
+		        <td><button data-ng-show="globals.currentUser" class="btn btn-primary" data-ng-disabled="!rating" data-ng-click="rateseller()">Rate Seller!
+			    </button>
+				</td>
+		      </tr>
+		      <tr>
+		       <th></th>
+			   <td><span ng-bind="message23"></span></td>	       
+		      </tr> 
+
+		  </table>
+		  </div>
+        </div>
+        </div>
+        </div>
+        </div>    

@@ -1,0 +1,71 @@
+<html>
+<body>
+
+	<div class="jumbotron text-center">
+		<h3>Welcome Admin! How are you doing today?</h3>
+	</div>
+
+	<div class="container text-center">
+		<div class="row">
+			<div class="col-lg-4 col-md-4">
+
+				<h3>
+					<i class="fa fa-pencil"></i> Add Categories
+				</h3>
+				<p>
+					Create New Categories <a href="#/add_category"
+						ui-sref="add_category">here</a>.
+				</p>
+				<p>
+					See the existing Categories <a href="#/list_categories"
+						ui-sref="list_categories">here</a>.
+				</p>
+
+			</div>
+
+			<div class="col-lg-4 col-md-4">
+				<h3>
+					<i class="fa fa-check-circle"></i> User List
+				</h3>
+				<p>
+					You can see and validate the users <a href="#/validate"
+						ui-sref="validate">here</a>.
+				</p>
+			</div>
+
+			<div class="col-lg-4 col-md-4">
+				<h3>
+					<i class="fa fa-check-circle"></i> Add Auction
+				</h3>
+				<p>
+					You can add your auction <a href="#/add_auction"
+						ui-sref="add_auction">here</a>.
+				</p>
+			</div>
+
+			<div class="col-lg-4 col-md-4">
+				<h3>
+					<i class="fa fa-check-circle"></i> Upload xml
+				</h3>
+				<!--   <p>upload and xml file <a href="#/upload_xml" ui-sref="upload_xml">here</a>.</p>-->
+				<input type="file" file-input="files"
+					onchange="angular.element(this).scope().filesChanged(this))"
+					multiple />
+				<button type="submit" ng-click="uploadxml()" class="btn btn-primary">
+					Submit <span ng-show="searchstate == 'Searching'"><i
+						class="glyphicon glyphicon-refresh spinning"></i></span>
+				</button>
+				<p>
+					<font size="3"> {{message}}
+
+					<li ng-repeat="file in files">{{file.name}}</li>
+					</font>
+				</p>
+			</div>
+		</div>
+	</div>
+	</div>
+	<!-- /.section -->
+
+</body>
+</html>

@@ -1,0 +1,45 @@
+
+
+    <div class="container">
+
+
+      <div class="row">
+                  <form class="form-horizontal" role="form" data-ng-submit="add_category()">
+                  		 <div class="form-group">
+					    <div class="col-sm-offset-2 col-sm-10">
+					       <h3><i>Add a new Category </i></h3>       
+					    </div>
+					    </div>
+					  <div class="form-group">
+					    <label class="control-label col-sm-2" for="categ_name">Category Name:</label>
+					    <div class="col-sm-10">
+					      <input type="text" ng-model="categ_name" class="form-control" id="categ_name" placeholder="Enter the Category Name" pattern="[A-Za-z\s]{4,25}" title="Only letters. Category name should be 4 or longer characters, max 25" required >
+					    </div>
+					  </div>
+					<div class="form-group">
+					    <label class="control-label col-sm-2" for="categ_desc">Category Description:</label>
+					    <div class="col-sm-10">
+					      <input type="text" ng-model="categ_desc" class="form-control" id="categ_desc"  placeholder="Add a Short Description" placeholder="Enter Auction Title" pattern="[^!@#$%^&;:]{4,100}" title="These ^!@#$%^&;: are not allowed. Title should be 5 or longer characters, max 100" required >
+					    </div>
+					  </div>
+		  
+					  <div class="form-group">
+					    <div class="col-sm-offset-2 col-sm-10">
+					      <button type="submit" onclick="add_category()" class="btn btn-primary">Add Category!
+					       <span ng-show="searchstate == 'Searching'"><i class="glyphicon glyphicon-refresh spinning"></i></span>
+					      </button>
+					    </div>
+					  </div>
+					   <div class="form-group">
+					    <div class="col-sm-offset-2 col-sm-10">
+					    	{{regmsg}}
+					    </div>
+					  </div>
+					</form>
+			</div>
+        <!-- /.row -->
+
+    </div>
+    <!-- /.container -->
+
+

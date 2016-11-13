@@ -1,0 +1,43 @@
+<div class="well">
+
+    <div class="container">
+
+      <div class="row">
+                  <form class="form-horizontal" role="form" data-ng-submit="makebid()">
+                  		 <div class="form-group">
+					    <div class="col-sm-offset-2 col-sm-10">
+					       <h3><i>To make a bid, enter the Auction ID and your bid and press the button</i></h3>       
+					    </div>
+					  <div class="form-group">
+					    <label class="control-label col-sm-2" for="auctionid">Auction ID:</label>
+					    <div class="col-sm-10">
+					      <input type="text" ng-model="auctionid" class="form-control" id="auctionid" placeholder="Enter Auction id">
+					    </div>
+					  </div>
+					  <div class="form-group">
+					    <label class="control-label col-sm-2" for="bid">Bid:</label>
+					    <div class="col-sm-10">
+					      <input type="text" ng-model="bid" class="form-control" id="bid" placeholder="Enter Bid">
+					    </div>
+					  </div>
+					  <div class="form-group">
+					    <div class="col-sm-offset-2 col-sm-10">
+					      <button type="submit" onclick="makebid()" class="btn btn-default">Submit your bid
+					       <span ng-show="searchstate == 'Searching'"><i class="glyphicon glyphicon-refresh spinning"></i></span>
+					      </button>
+					    </div>
+					  </div>
+					   <div class="form-group">
+					    <div class="col-sm-offset-2 col-sm-10">
+					    </div>
+					  </div>
+					</form>
+			</div>
+        <!-- /.row -->
+
+
+    </div>
+    <!-- /.container -->
+
+</div>
+<!-- /.well -->

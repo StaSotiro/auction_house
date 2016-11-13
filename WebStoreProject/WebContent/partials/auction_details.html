@@ -1,0 +1,106 @@
+
+
+<div class="section">
+	<div class="container">
+		<h2>
+			<center>Details about the auction!</center>
+		</h2>
+		<div class="table-responsive">
+			<table class="table">
+				<tr>
+					<th>Item Picture</th>
+					<td><img ng-src="http://www.w3schools.com/angular/{{myImg}}"
+						width="100" height="100")"></td>
+				</tr>
+			</table>
+		</div>
+		<div class="table-responsive">
+			<table class="table table-hover table-condensed">
+				<tr>
+					<th>Item Title</th>
+					<td><span ng-bind="auc_title"></span></td>
+				</tr>
+				<tr>
+					<th>Current Bid</th>
+					<td><span ng-bind="details.cur_bid | currency:'EUR ': 2"></span></td>
+				</tr>
+				<tr>
+					<th>Buy Price</th>
+					<td><span ng-bind="details.buy | currency:'EUR ': 2"></span></td>
+				</tr>
+
+
+				<tr>
+					<th>Seller</th>
+					<td><span ng-bind="details.seller"></span></td>
+				</tr>
+
+				<tr>
+					<th>Item Description</th>
+					<td><span ng-bind="details.desc"></span></td>
+				</tr>
+				<tr>
+					<th>Starting Bid</th>
+					<td><span ng-bind="details.first| currency:'EUR ': 2"></span></td>
+				</tr>
+				<tr>
+					<th>Starting Date</th>
+					<td><span ng-bind="details.star"></span></td>
+				</tr>
+				<tr>
+					<th>Ending Date</th>
+					<td><span ng-bind="details.end"></span></td>
+				</tr>
+				<tr>
+				<tr>
+					<th>Item Location</th>
+					<td><span ng-bind="details.location"></span></td>
+				</tr>
+
+				<tr>
+					<th data-ng-show="globals.currentUser">Enter your bid</th>
+					<td>EUR: <input type="number"
+						data-ng-show="globals.currentUser" name="bid" data-ng-model="bid"
+						step="0.01">
+					</td>
+				</tr>
+				<tr>
+					<th></th>
+					<td><button data-ng-show="globals.currentUser"
+							data-ng-disabled="!bid || details.cur_bid>bid || details.seller == globals.currentUser.username"
+							class="btn btn-primary" data-ng-click="makebid(details.id,bid)">Submit
+							bid!</button></td>
+				</tr>
+				<tr>
+					<th></th>
+					<td><button data-ng-show="globals.currentUser"
+							data-ng-disabled="details.seller == globals.currentUser.username"
+							class="btn btn-primary" data-ng-click="buynow()">Buy
+							Now!</button></td>
+				</tr>
+				<tr>
+					<th></th>
+					<td><button
+							data-ng-show="globals.currentUser.username=='admin'"
+							target="_self" class="btn btn-primary"
+							data-ng-click="downloadxml(auc_title)"
+							href="example.com/uploads/asd4a4d5a.pdf" download="auction.xml">Download
+						</td>
+				</tr>
+				<tr>
+					<th></th>
+					<td><span ng-bind="message23"></span></td>
+				</tr>
+			</table>
+		</div>
+
+
+	</div>
+	<!-- /.container -->
+
+</div>
+<!-- /.section-colored -->
+
+
+
+

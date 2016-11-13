@@ -1,0 +1,36 @@
+<div class="section">
+<div class="container">
+<div class="row">
+
+        <div class="col-sm-8">
+            <h3>Create a message</h3>
+             <form class="form-horizontal" role="form" data-ng-submit="send_message()">
+                <div class="row">
+                    <div class="form-group col-lg-4">
+                        <label for="to_username">Send to</label>
+                        <input type="text" ng-model="to_username" name="to_username" class="form-control" id="to_username" >
+                    </div>
+                    <div class="form-group col-lg-4">
+                        <label for="title">Message Title</label>
+                        <input type="text" ng-model="title" name="title" class="form-control" id="title">
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="form-group col-lg-12">
+                        <label for="message">Message</label>
+                        <textarea name="message" ng-model="message" class="form-control" rows="6" id="message"></textarea>
+                    </div>
+                    <div class="form-group col-lg-12">
+                        <input type="hidden" name="save" value="contact">
+                        <button type="submit" onclick="send_message()" class="btn btn-primary">Submit
+                         <span ng-show="searchstate == 'Searching'"><i class="glyphicon glyphicon-refresh spinning"></i></span>
+                        </button>
+                    </div> 
+                    <div class="form-group col-lg-12">
+						{{msg}}
+                   </div> 
+                </div>
+            </form>
+        </div>
+        </div>
+        </div>
+        </div>    
